@@ -16,8 +16,7 @@ typedef struct s_stack
 {
 	t_array	a;
 	t_array	b;
-	int		has_zero;
-	int		array_length;
+	int		length;
 }				t_stack;
 
 void	close_without_message();
@@ -39,4 +38,4 @@ long	ft_atoi(const char *str);
 void	integer_verification(char **arguments);
 void	length_verification(int arguments_length);
 void	set_stacks(t_stack *stack, char **numbers);
-void	verify_duplication(t_stack *stack, int number);
+void	verify_duplication(t_stack *stack, int number, int index);

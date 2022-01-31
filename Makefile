@@ -1,7 +1,8 @@
 NAME	=	push_swap
 SRCS	=	src/push_swap.c				src/actions/swap.c		src/actions/push.c				\
 			src/utils/set_stacks.c		src/actions/rotate.c	src/actions/reverse_rotate.c	\
-			src/utils/verification.c	src/utils/close.c		src/utils/utils.c
+			src/utils/verification.c	src/utils/close.c		src/utils/utils.c				\
+			src/algorithms/big_stack.c	src/algorithms/small_stack.c
 CC		=	gcc
 CFLAGS	=	-Wall -Wextra -Werror
 RM		=	rm -rf

@@ -1,28 +1,21 @@
 #include "../../inc/push_swap.h"
 
-void verify_duplication(t_stack *stack, int number)
+void verify_duplication(t_stack *stack, int number, int index)
 {
 	int i;
 
 	i = 0;
-	if (number == 0 && stack->has_zero)
-		close_program();
-	while (i < stack->array_length)
+	while (i < index)
 	{
-		if (stack->a.index[i] == number && number != 0)
+		if (stack->a.index[i] == number)
 			close_program();
-		else if (number == 0)
-		{
-			stack->has_zero = 1;
-			i = stack->array_length;
-		}
 		i++;
 	}
 }
 
-void length_verification(int array_length)
+void length_verification(int length)
 {
-	if (array_length == 0)
+	if (length == 0)
 		close_program_with_tip();
 }
 

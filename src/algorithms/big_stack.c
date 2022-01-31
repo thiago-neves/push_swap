@@ -2,5 +2,5 @@
 
 void big_stack(t_stack *stack)
 {
-	printf("Big stack\n", stack->array_length);
+	printf("Big stack: %d\n", stack->length);
 }
