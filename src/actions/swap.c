@@ -1,4 +1,4 @@
-#include "../inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 static void switch_first_2(t_array *stack)
 {

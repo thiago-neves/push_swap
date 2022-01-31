@@ -1,4 +1,4 @@
-#include "../inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 static void set_stack_a(char **numbers, t_stack *stack)
 {

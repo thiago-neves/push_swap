@@ -1,4 +1,4 @@
-#include "../inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 void small_stack(t_stack *stack)
 {

@@ -27,6 +27,7 @@ void	close_program();
 int		ft_isdigit(int c);
 void	push_a(t_stack *stack);
 void	push_b(t_stack *stack);
+void	big_stack(t_stack *stack);
 void	swap_a(t_stack *stack);
 void	swap_b(t_stack *stack);
 void	swap_s(t_stack *stack);

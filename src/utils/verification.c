@@ -1,4 +1,4 @@
-#include "../inc/push_swap.h"
+#include "../../inc/push_swap.h"
 
 void verify_duplication(t_stack *stack, int number)
 {
