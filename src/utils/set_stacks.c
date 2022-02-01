@@ -12,9 +12,11 @@ static void set_stack_a(char **numbers, t_stack *stack)
 		if (number > MAX_INT_NUM || number < MIN_INT_NUM)
 			close_program();
 		verify_duplication(stack, number, i);
-		stack->a.index[i] = number;
+		stack->b.index[i] = number;
 		i++;
 	}
+	fill_array_a(stack);
+	reset_array(&stack->b, stack->length);
 }
 
 void set_stacks(t_stack *stack, char **numbers)

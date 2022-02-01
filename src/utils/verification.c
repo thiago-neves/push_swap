@@ -7,7 +7,7 @@ void verify_duplication(t_stack *stack, int number, int index)
 	i = 0;
 	while (i < index)
 	{
-		if (stack->a.index[i] == number)
+		if (stack->b.index[i] == number)
 			close_program();
 		i++;
 	}

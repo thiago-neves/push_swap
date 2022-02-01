@@ -1,5 +1,39 @@
 #include "../../inc/push_swap.h"
 
+void fill_array_a(t_stack *stack)
+{
+	int	i;
+	int	j;
+	int	index;
+
+	i = 0;
+	while (i <= stack->length)
+	{
+		j = 0;
+		index = 0;
+		while (j <= stack->length)
+		{
+			if (stack->b.index[i] > stack->b.index[j])
+				index++;
+			j++;
+		}
+		stack->a.index[i] = index;
+		i++;
+	}
+}
+
+void reset_array(t_array *array, int length)
+{
+	int	i;
+
+	i = 0;
+	while(i < length)
+	{
+		array->index[i] = 0;
+		i++;
+	}
+}
+
 int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
