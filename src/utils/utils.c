@@ -11,7 +11,7 @@ void fill_array_a(t_stack *stack)
 	{
 		j = 0;
 		index = 0;
-		while (j <= stack->length)
+		while (j < stack->length)
 		{
 			if (stack->b.index[i] > stack->b.index[j])
 				index++;

@@ -19,9 +19,18 @@ static void rotate(t_array *array)
 void rotate_a(t_stack *stack)
 {
 	rotate(&stack->a);
+	printf("ra ");
 }
 
 void rotate_b(t_stack *stack)
 {
 	rotate(&stack->b);
+	printf("rb ");
+}
+
+void rotate_s(t_stack *stack)
+{
+	rotate_a(stack);
+	rotate_b(stack);
+	printf("rr ");
 }

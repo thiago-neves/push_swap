@@ -21,15 +21,18 @@ static void reverse_rotate(t_array *array)
 void reverse_rotate_a(t_stack *stack)
 {
 	reverse_rotate(&stack->a);
+	printf("rra ");
 }
 
 void reverse_rotate_b(t_stack *stack)
 {
 	reverse_rotate(&stack->b);
+	printf("rrb ");
 }
 
 void reverse_rotate_s(t_stack *stack)
 {
 	reverse_rotate(&stack->a);
 	reverse_rotate(&stack->b);
+	printf("rrr ");
 }

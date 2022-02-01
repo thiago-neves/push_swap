@@ -23,7 +23,7 @@ void	close_without_message();
 void 	fill_array_a(t_stack *stack);
 void	reset_array(t_array *array, int length);
 void	close_program_with_tip();
-void	small_stack(t_stack *stack);
+int		small_stack(t_stack *stack);
 void	close_program();
 int		ft_isdigit(int c);
 void	push_a(t_stack *stack);
