@@ -12,18 +12,18 @@ static void switch_two(t_array *stack)
 void swap_a(t_stack *stack)
 {
 	switch_two(&stack->a);
-	printf("sa ");
+	printf("sa\n");
 }
 
 void swap_b(t_stack *stack)
 {
 	switch_two(&stack->b);
-	printf("sb ");
+	printf("sb\n");
 }
 
 void swap_s(t_stack *stack)
 {
 	swap_a(stack);
 	swap_b(stack);
-	printf("ss ");
+	printf("ss\n");
 }

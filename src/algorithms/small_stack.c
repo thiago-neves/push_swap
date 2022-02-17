@@ -81,13 +81,16 @@ void sort_five_numbers(t_stack *stack, t_array *a)
 
 int small_stack(t_stack *stack)
 {
-	if (stack->a.length == 2)
-		swap_a(stack);
-	else if (stack->a.length == 3)
-		sort_three_numbers(stack, &stack->a);
-	else if (stack->a.length == 4)
-		sort_four_numbers(stack, &stack->a);
-	else if (stack->a.length == 5)
-		sort_five_numbers(stack, &stack->a);
+	if (!is_sorted(&stack->a))
+	{
+		if (stack->a.length == 2)
+			swap_a(stack);
+		else if (stack->a.length == 3)
+			sort_three_numbers(stack, &stack->a);
+		else if (stack->a.length == 4)
+			sort_four_numbers(stack, &stack->a);
+		else if (stack->a.length == 5)
+			sort_five_numbers(stack, &stack->a);
+	}
 	return (0);
 }

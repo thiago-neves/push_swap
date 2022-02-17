@@ -42,12 +42,12 @@ void push_a(t_stack *stack)
 {
 	if (stack->b.length > 0)
 		push(&stack->a, &stack->b);
-	printf("pa ");
+	printf("pa\n");
 }
 
 void push_b(t_stack *stack)
 {
 	if (stack->a.length > 0)
 		push(&stack->b, &stack->a);
-	printf("pb ");
+	printf("pb\n");
 }
