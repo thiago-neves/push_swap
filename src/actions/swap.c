@@ -1,6 +1,6 @@
 #include "../../inc/push_swap.h"
 
-static void switch_first_2(t_array *stack)
+static void switch_two(t_array *stack)
 {
 	int holder;
 
@@ -11,13 +11,13 @@ static void switch_first_2(t_array *stack)
 
 void swap_a(t_stack *stack)
 {
-	switch_first_2(&stack->a);
+	switch_two(&stack->a);
 	printf("sa ");
 }
 
 void swap_b(t_stack *stack)
 {
-	switch_first_2(&stack->b);
+	switch_two(&stack->b);
 	printf("sb ");
 }
 
