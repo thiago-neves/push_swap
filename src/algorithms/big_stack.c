@@ -80,21 +80,34 @@ int find_position(t_array *a, t_array *b)
 	i = 0;
 	biggest = -1;
 	smallest = -1;
-	while (i < b->length)
+	while (i < b->length - 1)
 	{
 		if (a->index[0] < b->index[i] && a->index[0] > b->index[i + 1])
+		{
+			//printf("\ninside_loop | Number: %d, smallest: %d\n", a->index[0], (i + 1));
 			return (i + 1);
+		}
 		if (smallest == -1 || b->index[i] < b->index[smallest])
 			smallest = i;
-		if (b->index[i] > biggest)
+		if (b->index[i] > b->index[biggest])
 			biggest = i;
 		i++;
 	}
-	//printf("\nNumber: %d\n", a->index[0]);
-	if (a->index[0] > b->index[biggest])
-		return (smallest + 1);
+	if (smallest == -1 || b->index[i] < b->index[smallest])
+		smallest = i;
+	if (b->index[i] > b->index[biggest])
+		biggest = i;
 	if (b->index[smallest] > a->index[0])
+	{
+		//printf("smalles/t\n");
 		return (smallest + 1);
+	}
+	if (a->index[0] > b->index[biggest])
+	{
+		//printf("biggest %d\n", b->index[biggest]);
+		return (biggest);
+	}
+	//printf("here\n");
 	return (-1);
 }
 
@@ -113,11 +126,18 @@ void push_to_stack_b(t_stack *stacks)
 	else
 	{
 		pos = find_position(&stacks->a, &stacks->b);
-		while (pos > 0)
-		{
-			rotate_b(stacks);
-			pos--;
-		}
+		if (pos > stacks->b.length / 2)
+			while (stacks->b.length - pos != 0)
+			{
+				reverse_rotate_b(stacks);
+				pos++;
+			}
+		else
+			while (pos > 0)
+			{
+				rotate_b(stacks);
+				pos--;
+			}
 		push_b(stacks);
 	}
 }
@@ -137,6 +157,36 @@ void sort_chunk(t_stack *stacks, int last_chunk, int chunk)
 	}
 }
 
+void order_stack_b(t_stack *stacks)
+{
+	int i;
+	int biggest;
+
+	i = 0;
+	biggest = -1;
+	while (i < stacks->b.length)
+	{
+		if (stacks->b.index[i] > stacks->b.index[biggest] || biggest == -1)
+			biggest = i;
+		i++;
+	}
+	//printf("Biggest: %d, length: %d\n", stacks->b.index[biggest], stacks->b.length);
+	if (biggest > stacks->b.length / 2)
+		while (stacks->b.length - biggest != 0)
+		{
+			reverse_rotate_b(stacks);
+			biggest++;
+		}
+	else
+		while (biggest)
+		{
+			rotate_b(stacks);
+			biggest--;
+		}
+	while (stacks->b.length)
+		push_a(stacks);
+}
+
 void sort_big_stack(t_stack *stacks, int chunk_number)
 {
  	int i;
@@ -151,10 +201,15 @@ void sort_big_stack(t_stack *stacks, int chunk_number)
  		sort_chunk(stacks, chunk * (i - 1), chunk * i);
  		i++;
  	}
+	sort_chunk(stacks, chunk * (i - 1), length);
+	order_stack_b(stacks);
 }
 
 void big_stack(t_stack *stacks)
 {
 	(void)stacks;
-	sort_big_stack(stacks, 1);
+	if (stacks->length < 100)
+		sort_big_stack(stacks, 5);
+	else
+		sort_big_stack(stacks, 11);
 }

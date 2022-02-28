@@ -34,24 +34,5 @@ void reverse_rotate_s(t_stack *stack)
 {
 	reverse_rotate(&stack->a);
 	reverse_rotate(&stack->b);
-	printf("rrr\nnt main(int array_length, char **numbers)
-{
-	t_stack stack;
-
-	stack.length = array_length - 1;
-	set_stacks(&stack, numbers);
-	if (stack.length <= 5)
-		small_stack(&stack);
-	else
-		big_stack(&stack);
-	int i = 0;
-	printf("\na\tb\n");
-	while (i < stack.length)
-	{
-		printf("%d\t%d\n", stack.a.index[i], stack.b.index[i]);
-		i++;
-	}
-	return (0);
-}
-");
+	printf("rrr\n");
 }
